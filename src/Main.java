@@ -3,7 +3,6 @@ import autosaloon.CarDatabase;
 import bookstore.BookStore;
 import cinema.Film;
 import elektroshop.Items;
-import library.Book;
 import library.Library;
 import moviestore.MovieDatabase;
 
@@ -19,6 +18,8 @@ public class Main {
             vstup = sc.nextLine();
 
             switch(vstup) {
+                case "0" :
+                    System.out.println("Program se ukončuje, nashledanou :D");
                 case "1":
                     CarDatabase carDatabase = new CarDatabase("Jita");
                     System.out.println("Kolik si prejete pridat aut?");
@@ -59,12 +60,15 @@ public class Main {
                     library.printInfo();
                     break;
                 case "6":
-                    MovieDatabase movieDatabase = new MovieDatabase();
+                    System.out.println("Zadejte název obchodu");
+                    String storeName = sc.nextLine();
+                    MovieDatabase movieDatabase = new MovieDatabase(storeName);
                     System.out.println("Kolik si prejete pridat filmu?");
                     pocet = sc.nextInt();
                     sc.nextLine();
                     movieDatabase.addMovies(pocet);
                     movieDatabase.printInfo();
+                    movieDatabase.InterestingFacts();
                     break;
                 default:
                     System.out.println("Zadana neplatna volba. Oprav se: ");
