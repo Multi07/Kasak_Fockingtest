@@ -16,11 +16,6 @@ public class MovieDatabase {
         this.storeName = storeName;
     }
 
-    /**
-     * Metoda se zepta uzivatele na informace k pozadovanemu poctu filmu. A ty prida do pole movies.
-     *
-     * @param count - pozadovany pocet hercu
-     */
     public void addMovies(int count) {
         movies = new Movie[count];
             for (int i = 0; i < count; i++) {
@@ -31,7 +26,7 @@ public class MovieDatabase {
                 int filmyear = sc.nextInt();
 
                 System.out.print("Delka filmu: ");
-               int delka = sc.nextInt();
+                int delka = sc.nextInt();
 
                 System.out.print("Zadej žánr (Komedie, Horor, Thriller): ");
 
@@ -45,11 +40,6 @@ public class MovieDatabase {
 
         }
 
-        /**
-         * Tato metoda vypise informace o filmu. Na prvnim rádku bude text "-----INFO O MOVIE----- ", na druhem bude název filmove databaze a dvojtecka.
-         * Na tretim radku bude text "filmy:" a následne budou vypsany vsichny filmy oddelene od sebe carkou a to ve formátu "nazev - zanr - rok natoceni" (Vyuzijte metodu printInfo() tridy Movie.)
-         * Na poslednim radku bude text "-----".
-         */
         public void printInfo () {
             System.out.println("-----INFO O MOVIE-----");
             System.out.println(storeName+": ");
